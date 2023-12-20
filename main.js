@@ -71,10 +71,8 @@ const validateInput = (inputObj) => {
                     console.log("step4: Incorrect");
                     console.log("Password ต้องมีทั้งตัวเลขและตัวอักษร");
                     alert("Password ต้องมีทั้งตัวเลขและตัวอักษร");
-                    alert(passwordTrim)
                     passwordInput.style.border = '2px solid red';
                 } else {
-                    alert(passwordTrim)
                     console.log("step4: Correct");
 
                     //step5: check Username และ Password จะต้องไม่มี space คั่นกลาง
