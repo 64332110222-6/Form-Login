@@ -28,9 +28,9 @@ const validateInput = (inputObj) => {
         console.log("step1: Incorrect");
         console.log("ทุก input ต้องไม่เป็นค่าว่างหรือ ใส่ space มาล้วนๆ");
         alert("ทุก input ต้องไม่เป็นค่าว่างหรือ ใส่ space มาล้วนๆ");
-        usernameInput.style.border = '1px solid red';
-        passwordInput.style.border = '1px solid red';
-        roleInput.style.border = '1px solid red';
+        usernameInput.style.border = '2px solid red';
+        passwordInput.style.border = '2px solid red';
+        roleInput.style.border = '2px solid red';
     } else {
         console.log("step1: Correct");
 
@@ -39,8 +39,8 @@ const validateInput = (inputObj) => {
             console.log("step2: Incorrect");
             console.log("Username ความยาวต้องมากกว่า 3 ตัวอักษร และ Password ความยาวต้องมากกว่า 4 ตัวอักษร");
             alert("Username ความยาวต้องมากกว่า 3 ตัวอักษร และ Password ความยาวต้องมากกว่า 4 ตัวอักษร");
-            usernameInput.style.border = '1px solid red';
-            passwordInput.style.border = '1px solid red';
+            usernameInput.style.border = '2px solid red';
+            passwordInput.style.border = '2px solid red';
         } else {
             console.log("step2: Correct");
 
@@ -53,26 +53,28 @@ const validateInput = (inputObj) => {
                 console.log("step3: Incorrect");
                 console.log("Username ห้ามนำหน้าด้วยตัวเลข");
                 alert("Username ห้ามนำหน้าด้วยตัวเลข");
-                usernameInput.style.border = '1px solid red';
+                usernameInput.style.border = '2px solid red';
             } else {
                 console.log("step3: Correct");
 
                 //step4: check Password ต้องมีทั้งตัวเลขและตัวอักษร
-                let passwordCheckNun = 0;
+                let passwordCheckNum = 0;
                 let passwordCheckChar = 0;
-                for (let i = 0; i <= passwordTrim.length; i++) {
+                for (let i = 0; i < passwordTrim.length; i++) {
                     if (!isNaN(passwordTrim[i])) {
-                        passwordCheckNun++;
+                        passwordCheckNum++;
                     } else {
                         passwordCheckChar++;
                     }
                 }
-                if (passwordCheckNun <= 0 || passwordCheckChar <= 0) {
+                if ((passwordCheckNum == 0) || (passwordCheckChar == 0)) {
                     console.log("step4: Incorrect");
                     console.log("Password ต้องมีทั้งตัวเลขและตัวอักษร");
                     alert("Password ต้องมีทั้งตัวเลขและตัวอักษร");
-                    passwordInput.style.border = '1px solid red';
+                    alert(passwordTrim)
+                    passwordInput.style.border = '2px solid red';
                 } else {
+                    alert(passwordTrim)
                     console.log("step4: Correct");
 
                     //step5: check Username และ Password จะต้องไม่มี space คั่นกลาง
@@ -80,8 +82,8 @@ const validateInput = (inputObj) => {
                         console.log("step5: Incorrect");
                         console.log("Username และ Password จะต้องไม่มี space คั่นกลาง");
                         alert("Username และ Password จะต้องไม่มี space คั่นกลาง");
-                        usernameInput.style.border = '1px solid red';
-                        passwordInput.style.border = '1px solid red';
+                        usernameInput.style.border = '2px solid red';
+                        passwordInput.style.border = '2px solid red';
                     } else {
                         console.log("step5: Correct");
                         location.assign("https://www.example.com")
